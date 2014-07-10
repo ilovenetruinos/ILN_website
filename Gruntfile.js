@@ -59,7 +59,7 @@ module.exports = function (grunt) {
         files: [
           '<%= config.app %>/{,*/}*.html',
           '.tmp/styles/{,*/}*.css',
-          '<%= config.app %>/images/{,*/}*'
+          '<%= config.app %>/Images/{,*/}*'
         ]
       }
     },
@@ -318,6 +318,19 @@ module.exports = function (grunt) {
         'imagemin',
         'svgmin'
       ]
+    },
+
+    'ftp-deploy': {
+      build: {
+        auth: {
+          host: 'ftp.iloveneutrinos.com',
+          port: 21,
+          authKey: 'key1'
+        },
+        src: '/Applications/XAMPP/xamppfiles/htdocs/ILN_website/dist/',
+        dest: '/public_html/',
+        exclusions: ['/Applications/XAMPP/xamppfiles/htdocs/ILN_website/dist/**/.DS_Store']
+      }
     }
   });
 
@@ -379,5 +392,13 @@ module.exports = function (grunt) {
     'newer:jshint',
     'test',
     'build'
+  ]);
+
+  grunt.loadNpmTasks('grunt-ftp-deploy');
+
+  grunt.registerTask('deploy', [
+    'newer:jshint',
+    'build',
+    'ftp-deploy'
   ]);
 };
