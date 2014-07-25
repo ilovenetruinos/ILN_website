@@ -1,6 +1,5 @@
 NProgress.configure({ showSpinner: false });
 
-
 $( document ).ajaxStart(function() {
   'use strict';
   NProgress.start();
@@ -10,7 +9,6 @@ $( document ).ajaxStart(function() {
   'use strict';
   NProgress.done();
 });
-
 
 $('#external').on('click', '#btRegister', function(e) {
   'use strict';
@@ -25,6 +23,7 @@ $('#external').on('click', '#btRegister', function(e) {
       return response;
     }
   });
+  History.pushState({data:"Register"}, "Register", "register.html");
 
 });  
 
@@ -49,6 +48,8 @@ $('#external').on('click', '#btSubmit', function() {
 
       },
       submitHandler: function(form) {
+
+          //TODO: http://stackoverflow.com/questions/18265637/jquery-validate-with-ajax-in-submithandler-submits-on-second-click
           form.submit();
       }
   });
@@ -68,4 +69,8 @@ $('#external').on('click', '#btBack', function(e) {
     }
   });
 
+  History.pushState({data:"Index"}, "Index", "/");
+
 });
+
+//$('body').removeClass('default').addClass('two');

@@ -53,18 +53,20 @@
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/nprogress/nprogress.js"></script>
     <script src="bower_components/jquery-validation/dist/jquery.validate.js"></script>
-    <script src="bower_components/images-loader/build/ImagesLoader.js"></script>
+    <script src="bower_components/history.js/scripts/compressed/history.js"></script>
+    <script src="bower_components/history.js/scripts/compressed/history.adapter.jquery.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
     <script type="text/javascript">
-
-$(function() {
-  // Handler for .ready() called.
-});
-
-//$('body').removeClass('default').addClass('two');
-
+      $(function() {
+        var State = null;
+        var History = window.History;
+        History.Adapter.bind(window,'statechange',function(){ 
+            var State = History.getState(); 
+            History.log(State.data, State.title, State.url);
+        });
+      });
     </script>
 
     <!-- build:js({app,.tmp}) scripts/main.js -->
