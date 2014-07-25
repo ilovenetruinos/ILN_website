@@ -6,6 +6,13 @@ html, body {
   min-height: 240px;
   font-family: 'Noto Serif', serif;
 }
+
+fieldset{
+  border: none;
+  padding: 0px;
+  margin: 0px;
+}
+
 body.default {
   position: relative;
   background: url("/images/Georges_Braque.jpg");
@@ -33,7 +40,6 @@ body.default {
     margin: 10px 0px 0px 0px;
     padding: 0;
     text-align: left;
-    width: 400px;
 }
 
 /* TODO: Improve the way to show large contents and footer; */
@@ -57,15 +63,15 @@ h1 {
   padding: 0;
   font-size: 30px;
 }
-p {
+#content p {
   margin: 20px 0;
 }
-ul {
+#content ul {
   list-style: none;
   margin: 0;
   padding: 0;
 }
-li {
+#content li {
   float: left;
   margin: 0 20px 0 0;
   padding: 0;

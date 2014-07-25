@@ -21,6 +21,7 @@
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css(.) styles/vendor.css -->
     <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/normalize.css/normalize.css" />
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
     <link rel="stylesheet" href="bower_components/nprogress/nprogress.css" />
     <!-- endbower -->
@@ -32,68 +33,37 @@
 </head>
 <body class="default">
 
-    <div id="content">
+  <div id="content">
     <div id="external">
-      <p>
-    Fill the following form to do the Pre-registration process in the course.
-    Once we received the application, we will study with detail and I will inform about the result.
-      </p>
-   <!--   
-      <form action="" method="post" id="register-form" novalidate="novalidate">
-        <fieldset>
-          <div class="form-group">
-            <label for="parentFullName">Parent Fullname:</label>
-            <input type="text" class="form-control" id="parentFullName" placeholder="Pepe Perez">
-          </div>
-          <div class="form-group">
-            <label for="parentEmail">Email address:</label>
-            <input type="text" class="form-control" id="parentEmail" placeholder="pepe@company.com">
-          </div>
-          <div class="form-group">
-            <label for="studentFullName">Student Fullname:</label>
-            <input type="text" class="form-control" id="studentFullName" placeholder="Studen's name">
-          </div>
-          <div class="form-group">
-            <a href="/" id="btBack" class="btn btn-default" role="button">Back</a>
-            <button type="submit" id="btSubmit" class="btn btn-default submit">Submit</button>
-            <input type="submit" id="btSubmit" value="Register" class="submit">
-          </div>
-        </fieldset>
-      </form>
-    -->
-      <!-- HTML form for validation demo -->
-      
-<form action="" method="post" id="register-form" novalidate="novalidate">
+        <p>
+      Fill the following form to do the Pre-registration process in the course.
+      Once we received the application, we will study with detail and I will inform about the result.
+        </p>
+        <form action="" method="post" id="register-form" novalidate="novalidate">
+          <fieldset>
 
-    <div id="form-content">
-        <fieldset>
+              <div class="form-group">
+                <label for="parentFullName">Parent Fullname:</label>
+                <input type="text" class="form-control" name="parentFullName" id="parentFullName" placeholder="Pepe Perez">
+              </div>
 
-            <div class="form-group">
-              <label for="parentFullName">Parent Fullname:</label>
-              <input type="text" class="form-control" name="parentFullName" id="parentFullName" placeholder="Pepe Perez">
-            </div>
+              <div class="form-group">
+                <label for="parentEmail">Email address:</label>
+                <input type="mail" class="form-control" name="parentEmail"  id="parentEmail" placeholder="pepe@company.com">
+              </div>
 
-            <div class="form-group">
-              <label for="parentEmail">Email address:</label>
-              <input type="mail" class="form-control" name="parentEmail"  id="parentEmail" placeholder="pepe@company.com">
-            </div>
+              <div class="form-group">
+                <label for="studentFullName">Student Fullname:</label>
+                <input type="text" class="form-control" name="studentFullName" id="studentFullName" placeholder="Studen's name">
+              </div>
 
-            <div class="form-group">
-              <label for="studentFullName">Student Fullname:</label>
-              <input type="text" class="form-control" name="studentFullName" id="studentFullName" placeholder="Studen's name">
-            </div>
+              <div class="form-group">
+                <a href="/" id="btBack" class="btn btn-default" role="button">Back</a>
+                <button type="submit" id="btSubmit" class="btn btn-default submit">Submit</button>
+              </div>
 
-            <div class="form-group">
-              <a href="/" id="btBack" class="btn btn-default" role="button">Back</a>
-              <button type="submit" id="btSubmit" class="btn btn-default submit">Submit</button>
-            </div>
-
-        </fieldset>
-    </div>
-</form>
-
-
-
+          </fieldset>
+        </form>
     </div>
   </div>
     <div id="footer">
