@@ -1,53 +1,71 @@
-/* fix vertical when not overflow
-call fullscreenFix() if .fullscreen content changes */
-function fullscreenFix(){
-    'use strict';
-    var h = $('body').height();
-    // set .fullscreen height
-    $('.content-b').each(function(){
-        if($(this).innerHeight() <= h){
-            $(this).closest('.fullscreen').addClass('not-overflow');
-        }
-    });
-}
-$(window).resize(fullscreenFix);
-fullscreenFix();
+NProgress.configure({ showSpinner: false });
 
-/* resize background images */
-function backgroundResize(){
-    'use strict';
-    var windowH = $(window).height();
-    $('.background').each(function(){
-        var path = $(this);
-        // variables
-        var contW = path.width();
-        var contH = path.height();
-        var imgW = path.attr('data-img-width');
-        var imgH = path.attr('data-img-height');
-        var ratio = imgW / imgH;
-        // overflowing difference
-        var diff = parseFloat(path.attr('data-diff'));
-        diff = diff ? diff : 0;
-        // remaining height to have fullscreen image only on parallax
-        var remainingH = 0;
-        if(path.hasClass('parallax')){
-            //var maxH = contH > windowH ? contH : windowH;
-            remainingH = windowH - contH;
-        }
-        // set img values depending on cont
-        imgH = contH + remainingH + diff;
-        imgW = imgH * ratio;
-        // fix when too large
-        if(contW > imgW){
-            imgW = contW;
-            imgH = imgW / ratio;
-        }
-        //
-        path.data('resized-imgW', imgW);
-        path.data('resized-imgH', imgH);
-        path.css('background-size', imgW + 'px ' + imgH + 'px');
-    });
-}
-$(window).resize(backgroundResize);
-$(window).focus(backgroundResize);
-backgroundResize();
+
+$( document ).ajaxStart(function() {
+  'use strict';
+  NProgress.start();
+});
+
+$( document ).ajaxStart(function() {
+  'use strict';
+  NProgress.done();
+});
+
+
+$('#external').on('click', '#btRegister', function(e) {
+  'use strict';
+  e.preventDefault();
+
+  $('#external').load('/register.html #external' , function( response, status, xhr ) {
+    if ( status === 'error' ) {
+      var msg = 'Sorry but there was an error: ';
+      return msg + xhr.status + ' ' + xhr.statusText;
+    }else if(status === 'success'){
+
+      return response;
+    }
+  });
+
+});  
+
+$('#external').on('click', '#btSubmit', function() {
+  'use strict';
+
+  $('#register-form').validate({
+      rules: {
+          parentFullName: 'required',
+          parentEmail: {
+              required: true,
+              email: true
+          },
+          studentFullName: {
+              required: true
+          }
+      },
+      messages: {
+          parentFullName: 'Please enter your full name',
+          parentEmail: 'Please enter a valid email address',
+          studentFullName: 'Please the student\'s full name'
+
+      },
+      submitHandler: function(form) {
+          form.submit();
+      }
+  });
+
+});
+
+$('#external').on('click', '#btBack', function(e) {
+  'use strict';
+  e.preventDefault();
+
+  $('#external').load('/index.html #external' , function( response, status, xhr ) {
+    if ( status === 'error' ) {
+      var msg = 'Sorry but there was an error: ';
+      return msg + xhr.status + ' ' + xhr.statusText;
+    }else if(status === 'success'){
+      return response;
+    }
+  });
+
+});
