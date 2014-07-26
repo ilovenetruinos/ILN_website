@@ -2,12 +2,11 @@
   "name": "iln-website",
   "private": true,
   "dependencies": {
+    "normalize.css": "~3.0.1",
     "bootstrap": "~3.1.1",
     "jquery": "~1.11.1",
-    "nprogress": "~0.1.6",
     "jquery-validation": "~1.13.0",
-    "images-loader": "~0.1.1",
-    "normalize.css": "~3.0.1",
+    "nprogress": "~0.1.6",
     "history.js": "~1.8.0"
   },
   "devDependencies": {}

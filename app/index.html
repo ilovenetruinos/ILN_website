@@ -19,13 +19,13 @@
 
     <link href='http://fonts.googleapis.com/css?family=Noto+Serif' rel='stylesheet' type='text/css'>
 
-    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css(.) styles/vendor.css -->
     <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/normalize.css/normalize.css" />
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
     <link rel="stylesheet" href="bower_components/nprogress/nprogress.css" />
-    <link rel="stylesheet" href="bower_components/normalize.css/normalize.css" />
     <!-- endbower -->
+
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/index.css -->
     <link rel="stylesheet" href="Styles/index.css">
@@ -51,26 +51,15 @@
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
     <script src="bower_components/jquery/dist/jquery.js"></script>
-    <script src="bower_components/nprogress/nprogress.js"></script>
     <script src="bower_components/jquery-validation/dist/jquery.validate.js"></script>
-    <script src="bower_components/history.js/scripts/compressed/history.js"></script>
-    <script src="bower_components/history.js/scripts/compressed/history.adapter.jquery.js"></script>
+    <script src="bower_components/nprogress/nprogress.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
-    <script type="text/javascript">
-      $(function() {
-        var State = null;
-        var History = window.History;
-        History.Adapter.bind(window,'statechange',function(){ 
-            var State = History.getState(); 
-            History.log(State.data, State.title, State.url);
-        });
-      });
-    </script>
-
+    <script type="text/javascript" src="scripts/history.js"></script>
+    <script type="text/javascript" src="scripts/history.adapter.jquery.js"></script>
     <!-- build:js({app,.tmp}) scripts/main.js -->
-    <script src="scripts/main.js"></script>
+    <script type="text/javascript" src="scripts/main.js"></script>
     <!-- endbuild -->
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->

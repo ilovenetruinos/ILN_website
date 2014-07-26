@@ -15,7 +15,7 @@ fieldset{
 
 body.default {
   position: relative;
-  background: url("/images/Georges_Braque.jpg");
+  background: url("/images/Velazquez_Breda4.jpg");
   background-size: cover;
   /* IE8 Support http://louisremi.github.io/background-size-polyfill/ */
   -ms-behavior: url("./backgroundsize.min.htc");

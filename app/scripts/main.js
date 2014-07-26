@@ -1,3 +1,12 @@
+$(function() {
+  var State = null;
+  var History = window.History;
+  History.Adapter.bind(window,'statechange',function(){ 
+      var State = History.getState(); 
+      History.log(State.data, State.title, State.url);
+  });
+});
+      
 NProgress.configure({ showSpinner: false });
 
 $( document ).ajaxStart(function() {
