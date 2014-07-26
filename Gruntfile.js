@@ -353,7 +353,7 @@ module.exports = function (grunt) {
         },
         src: '/Applications/XAMPP/xamppfiles/htdocs/ILN_website/dist/',
         dest: '/public_html/',
-        exclusions: ['/Applications/XAMPP/xamppfiles/htdocs/ILN_website/dist/**/.DS_Store']
+        exclusions: ['/Applications/XAMPP/xamppfiles/htdocs/ILN_website/dist/**/.DS_Store', '/Applications/XAMPP/xamppfiles/htdocs/ILN_website/dist/index.html']
       }
     },
 
