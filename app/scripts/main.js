@@ -85,4 +85,39 @@ $('#external').on('click', '#btBack', function(e) {
 
 });
 
-//$('body').removeClass('default').addClass('two');
+//CSS Carrousel
+
+var backgroundsCSSClasses = new Array("one", "two","three","four");
+var backgroundIndex = 0;
+
+function updateBackground(){
+  console.log("Running");
+
+  if(backgroundIndex >= backgroundsCSSClasses.length){
+    backgroundIndex = 0;
+  }
+  var currentClass = backgroundsCSSClasses[backgroundIndex];
+
+  var $p = $("<p></p>").hide();
+  $p.addClass(currentClass);
+  $p.appendTo("body");
+  var bg = $p.css("background-image");
+  bg = bg.replace('url(','').replace(')','');
+  //alert(bg);
+
+  var img = $("<img />").attr('src', bg)
+  .load(function() {
+      if (!this.complete || typeof this.naturalWidth == "undefined" || this.naturalWidth == 0) {
+        //Nothing
+      } else {
+        $('body').css('background-image', 'url(' + bg + ')');
+      }
+  });
+
+  $p.remove();
+
+  backgroundIndex++;
+
+}
+
+var interval = setInterval(updateBackground, 60000*2);

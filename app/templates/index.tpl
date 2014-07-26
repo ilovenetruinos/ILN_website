@@ -7,7 +7,7 @@
     {include file="header.tpl"}
 
 </head>
-<body class="default">
+<body>
     <div id="content">
         <h1>I Love Neutrinos</h1>
         <div id="external">
