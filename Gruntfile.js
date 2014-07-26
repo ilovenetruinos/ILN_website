@@ -312,18 +312,6 @@ module.exports = function (grunt) {
           dest: '<%= config.dist %>'
         }]
       },
-      /*
-      dist2: {
-        files: [{
-          expand: true,
-          dot: true,
-          cwd: '<%= config.app %>',
-          dest: 'dest/scripts/',
-          src: [
-            './scripts/history.js',
-          ]
-        }
-      },*/
       styles: {
         expand: true,
         dot: true,
@@ -373,7 +361,7 @@ module.exports = function (grunt) {
     },
     phpcs: {
         application: {
-            dir: 'src'
+            dir: './app/demo/'
         },
         options: {
             bin: 'phpcs',
@@ -384,7 +372,10 @@ module.exports = function (grunt) {
         options: {
             swapPath: '/tmp'
         },
-        all: ['src/*.php', 'src/base/*.php', 'src/config/*.php', 'src/controller/*.php', 'src/model/*.php']
+        all: [
+          './app/*.php', 
+          './app/demo/*.php'
+        ]
     },
     phpunit: {
         unit: {
@@ -396,12 +387,14 @@ module.exports = function (grunt) {
             colors: true,
             testdox: true
         }
-    },
+    }
+    /*
     php_analyzer: {
         application: {
-            dir: 'src'
+            dir: './app/'
         }
     }
+    */
 
   });
 
@@ -468,22 +461,24 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-ftp-deploy');
 
   grunt.registerTask('deploy', [
-    //'newer:jshint',
+    'newer:jshint',
+    'phplint',
     'build',
-    'ftp-deploy'
+    //'ftp-deploy'
   ]);
 
-
+  /*
   grunt.loadNpmTasks('grunt-phpcs');
   grunt.loadNpmTasks('grunt-php');
   grunt.loadNpmTasks('grunt-phplint');
   grunt.loadNpmTasks('grunt-phpunit');
-  grunt.loadNpmTasks('grunt-php-analyzer');
+  */
+  //grunt.loadNpmTasks('grunt-php-analyzer');
   grunt.registerTask('precommit', ['phplint:all', 'phpunit:unit']);
   grunt.registerTask('default', ['phplint:all', 'phpcs', 'phpunit:unit', 'php_analyzer:application']);
   //grunt.registerTask('server', ['php']);
 
-  grunt.registerTask('serverPHP', 'start the PHP server and preview your app', function (target) {
+  grunt.registerTask('serverPHP', 'start the PHP server and preview your app', function () {
 
     grunt.task.run([
       'build',
