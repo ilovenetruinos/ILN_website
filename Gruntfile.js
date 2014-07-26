@@ -52,6 +52,14 @@ module.exports = function (grunt) {
         files: ['<%= config.app %>/styles/{,*/}*.css'],
         tasks: ['newer:copy:styles', 'autoprefixer']
       },
+
+      markup: {
+          files: ['*/*.php'],
+          options: {
+              livereload: 35729
+          }
+      },
+
       livereload: {
         options: {
           livereload: '<%= connect.options.livereload %>'
@@ -291,12 +299,12 @@ module.exports = function (grunt) {
             'libs/*.*',
             'libs/sysplugins/*.*',
             'libs/plugins/*.*',
-            'demo/*.*',
-            'demo/cache/*.*',
-            'demo/configs/*.*',
+            '*.php',
+            'cache/*.*',
+            'configs/*.*',
             //'demo/plugins/*.*',
-            'demo/templates/*.*',
-            'demo/templates_c/*.*',
+            'templates/*.*',
+            'templates_c/*.*',
 
             //Rare JS
             'scripts/history.js',
@@ -355,7 +363,20 @@ module.exports = function (grunt) {
                 port: 8080,
                 base: './dist/',
                 open: true,
-                keepalive: true
+                keepalive: true,
+                options: {
+                  livereload: 35729
+                }
+            }
+        },
+        dev: {
+            options: {
+                hostname: '127.0.0.1',
+                base: './tmp',
+                port: 5000,
+                options: {
+                  livereload: 35729
+                }
             }
         }
     },
@@ -387,7 +408,7 @@ module.exports = function (grunt) {
             colors: true,
             testdox: true
         }
-    }
+    },
     /*
     php_analyzer: {
         application: {
@@ -395,6 +416,7 @@ module.exports = function (grunt) {
         }
     }
     */
+
 
   });
 
@@ -447,9 +469,9 @@ module.exports = function (grunt) {
     'cssmin',
     'uglify',
     'copy:dist',
-    'rev',
-    'usemin',
-    'htmlmin'
+    //'rev',
+    //'usemin',
+    //'htmlmin'
   ]);
 
   grunt.registerTask('default', [
@@ -461,10 +483,10 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-ftp-deploy');
 
   grunt.registerTask('deploy', [
-    'newer:jshint',
+    //'newer:jshint',
     'phplint',
     'build',
-    //'ftp-deploy'
+    'ftp-deploy'
   ]);
 
   /*
@@ -482,9 +504,16 @@ module.exports = function (grunt) {
 
     grunt.task.run([
       'build',
-      'php'
+  /*
+      'clean:server',
+      'wiredep',
+      'concurrent:server',
+      'autoprefixer',
+      'connect:livereload',
+  */
+      'php',
+      //'watch:markup'
     ]);
 
   });
-
 };

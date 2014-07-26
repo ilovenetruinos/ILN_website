@@ -6,7 +6,7 @@ $(function() {
       History.log(State.data, State.title, State.url);
   });
 });
-      
+
 NProgress.configure({ showSpinner: false });
 
 $( document ).ajaxStart(function() {
@@ -23,7 +23,7 @@ $('#external').on('click', '#btRegister', function(e) {
   'use strict';
   e.preventDefault();
 
-  $('#external').load('/register.html #external' , function( response, status, xhr ) {
+  $('#external').load('/register/ #external' , function( response, status, xhr ) {
     if ( status === 'error' ) {
       var msg = 'Sorry but there was an error: ';
       return msg + xhr.status + ' ' + xhr.statusText;
@@ -32,9 +32,12 @@ $('#external').on('click', '#btRegister', function(e) {
       return response;
     }
   });
-  History.pushState({data:"Register"}, "Register", "register.html");
+  History.pushState({data:"Register"}, "Register", "/register/");
 
 });  
+
+//Mover a HTML5.
+//http://www.html5-tutorials.org/form-validation/polyfills-for-form-validation/
 
 $('#external').on('click', '#btSubmit', function() {
   'use strict';
@@ -69,7 +72,7 @@ $('#external').on('click', '#btBack', function(e) {
   'use strict';
   e.preventDefault();
 
-  $('#external').load('/index.html #external' , function( response, status, xhr ) {
+  $('#external').load('/ #external' , function( response, status, xhr ) {
     if ( status === 'error' ) {
       var msg = 'Sorry but there was an error: ';
       return msg + xhr.status + ' ' + xhr.statusText;
