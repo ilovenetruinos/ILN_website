@@ -286,6 +286,22 @@ module.exports = function (grunt) {
             '.htaccess',
             'images/{,*/}*.webp',
             '{,*/}*.html',
+            //PHP Support
+            '{,*/}*.php',
+            'libs/*.*',
+            'libs/sysplugins/*.*',
+            'libs/plugins/*.*',
+            'demo/*.*',
+            'demo/cache/*.*',
+            'demo/configs/*.*',
+            //'demo/plugins/*.*',
+            'demo/templates/*.*',
+            'demo/templates_c/*.*',
+
+            //Rare JS
+            'scripts/history.js',
+            'scripts/history.adapter.jquery.js',
+
             'styles/fonts/{,*/}*.*'
           ]
         }, {
@@ -296,6 +312,18 @@ module.exports = function (grunt) {
           dest: '<%= config.dist %>'
         }]
       },
+      /*
+      dist2: {
+        files: [{
+          expand: true,
+          dot: true,
+          cwd: '<%= config.app %>',
+          dest: 'dest/scripts/',
+          src: [
+            './scripts/history.js',
+          ]
+        }
+      },*/
       styles: {
         expand: true,
         dot: true,
@@ -337,7 +365,7 @@ module.exports = function (grunt) {
         dist: {
             options: {
                 port: 8080,
-                base: 'app',
+                base: './dist/',
                 open: true,
                 keepalive: true
             }
@@ -453,6 +481,15 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-php-analyzer');
   grunt.registerTask('precommit', ['phplint:all', 'phpunit:unit']);
   grunt.registerTask('default', ['phplint:all', 'phpcs', 'phpunit:unit', 'php_analyzer:application']);
-  grunt.registerTask('server', ['php']);
+  //grunt.registerTask('server', ['php']);
+
+  grunt.registerTask('serverPHP', 'start the PHP server and preview your app', function (target) {
+
+    grunt.task.run([
+      'build',
+      'php'
+    ]);
+
+  });
 
 };
