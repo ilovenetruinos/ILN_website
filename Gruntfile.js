@@ -351,9 +351,9 @@ module.exports = function (grunt) {
           port: 21,
           authKey: 'key1'
         },
-        src: '/Applications/XAMPP/xamppfiles/htdocs/ILN_website/dist/',
+        src: './dist/',
         dest: '/public_html/',
-        exclusions: ['/Applications/XAMPP/xamppfiles/htdocs/ILN_website/dist/**/.DS_Store', '/Applications/XAMPP/xamppfiles/htdocs/ILN_website/dist/index.html']
+        exclusions: ['./dist/**/.DS_Store', './dist/index.html']
       }
     },
 

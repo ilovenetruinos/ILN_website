@@ -5,6 +5,7 @@ html, body {
   height: 100%;
   min-height: 240px;
   font-family: 'Noto Serif', serif;
+  font-size: 14px;
 }
 
 fieldset{
@@ -13,9 +14,13 @@ fieldset{
   margin: 0px;
 }
 
+.form-group{
+  margin-bottom: 10px;
+}
+
 body {
   position: relative;
-  background: url("/images/Velazquez_Breda4.jpg");
+  background: url("/images/pyramids.jpg");
   background-size: cover;
   /* IE8 Support http://louisremi.github.io/background-size-polyfill/ */
   -ms-behavior: url("./backgroundsize.min.htc");
@@ -26,7 +31,7 @@ body {
 
 .one{
   position: relative;
-  background: url("/images/Iliad_Heroes2.jpg");
+  background: url("/images/spheres.jpg");
   background-size: cover;
   /* IE8 Support http://louisremi.github.io/background-size-polyfill/ */
   -ms-behavior: url("./backgroundsize.min.htc");
@@ -35,7 +40,7 @@ body {
 
 .two{
   position: relative;
-  background: url("/images/Velazquez_Breda4.jpg");
+  background: url("/images/abb.jpg");
   background-size: cover;
   /* IE8 Support http://louisremi.github.io/background-size-polyfill/ */
   -ms-behavior: url("./backgroundsize.min.htc");
@@ -44,7 +49,7 @@ body {
 
 .three{
   position: relative;
-  background: url("/images/Paolo_Battle.jpg");
+  background: url("/images/nxt.jpg");
   background-size: cover;
   /* IE8 Support http://louisremi.github.io/background-size-polyfill/ */
   -ms-behavior: url("./backgroundsize.min.htc");
@@ -60,6 +65,30 @@ body {
   behavior: url("./backgroundsize.min.htc");
 }
 
+.five{
+  position: relative;
+  background: url("/images/mars2.jpg");
+  background-size: cover;
+  /* IE8 Support http://louisremi.github.io/background-size-polyfill/ */
+  -ms-behavior: url("./backgroundsize.min.htc");
+  behavior: url("./backgroundsize.min.htc");
+}
+
+.six{
+  position: relative;
+  background: url("/images/Iliad_Heroes2.jpg");
+  background-size: cover;
+  /* IE8 Support http://louisremi.github.io/background-size-polyfill/ */
+  -ms-behavior: url("./backgroundsize.min.htc");
+  behavior: url("./backgroundsize.min.htc");
+}
+
+div.backgroundsCSSClasses:before{
+  position: absolute;
+  left: -9000px; 
+  content: 'one, two, three, four, five, six';
+}
+
 /* End CSS Carrousel*/
 
 #content {
@@ -72,36 +101,43 @@ body {
   color: #111;
   z-index: 99;
   background-color: rgba(255,255,255,.5);
+  border-bottom: 3px solid rgba(255,255,255,.7);
 }
 
 #register-form .form-group label.error {
-    color: #FB3A3A;
+    color: rgb(204, 21, 35);
     display: inline-block;
     margin: 10px 0px 0px 0px;
     padding: 0;
     text-align: left;
 }
 
+.hideAural { 
+  position: absolute !important; 
+  clip: rect(1px 1px 1px 1px); /* IE6, IE7 */ 
+  clip: rect(1px, 1px, 1px, 1px); 
+} 
+
 /* TODO: Improve the way to show large contents and footer; */
 #footer {
   position: absolute;
   bottom: 0px;
   left: 0px;
-  font-size: 12px;
   z-index: 1;
   opacity: .75;
-  color: #fff;
   margin: 20px;
   padding: 0px;
+  color: white;
 }
 #footer a {
-  color: #fff;
+  color: white;
   text-decoration: underline;
 }
 h1 {
   margin: 0;
   padding: 0;
-  font-size: 30px;
+  font-size: 32 px;
+  color: rgb(204, 21, 35);
 }
 #content p {
   margin: 20px 0;
@@ -117,6 +153,19 @@ h1 {
   padding: 0;
 }
 
+a.standard {
+  color: black;
+  text-decoration: underline;
+}
+
+#content li a{
+  color: black;
+}
+
 #clear{
   clear:both;
+}
+
+#content p.register{
+  margin-bottom: 0px;
 }

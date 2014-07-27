@@ -19,6 +19,59 @@ $( document ).ajaxStart(function() {
   NProgress.done();
 });
 
+//Index Controller
+
+$('#external').on('click', '#btAbout', function(e) {
+  'use strict';
+  e.preventDefault();
+
+  $('#external').load('/about/ #external' , function( response, status, xhr ) {
+    if ( status === 'error' ) {
+      var msg = 'Sorry but there was an error: ';
+      return msg + xhr.status + ' ' + xhr.statusText;
+    }else if(status === 'success'){
+
+      return response;
+    }
+  });
+  History.pushState({data:"About"}, "About", "/about/");
+
+}); 
+
+$('#external').on('click', '#btDocs', function(e) {
+  'use strict';
+  e.preventDefault();
+
+  $('#external').load('/docs/ #external' , function( response, status, xhr ) {
+    if ( status === 'error' ) {
+      var msg = 'Sorry but there was an error: ';
+      return msg + xhr.status + ' ' + xhr.statusText;
+    }else if(status === 'success'){
+
+      return response;
+    }
+  });
+  History.pushState({data:"Docs"}, "Docs", "/docs/");
+
+});
+
+$('#external').on('click', '#btContact', function(e) {
+  'use strict';
+  e.preventDefault();
+
+  $('#external').load('/contact/ #external' , function( response, status, xhr ) {
+    if ( status === 'error' ) {
+      var msg = 'Sorry but there was an error: ';
+      return msg + xhr.status + ' ' + xhr.statusText;
+    }else if(status === 'success'){
+
+      return response;
+    }
+  });
+  History.pushState({data:"Contact"}, "Contact", "/contact/");
+
+});
+
 $('#external').on('click', '#btRegister', function(e) {
   'use strict';
   e.preventDefault();
@@ -36,7 +89,9 @@ $('#external').on('click', '#btRegister', function(e) {
 
 });  
 
-//Mover a HTML5.
+//Register Controller
+
+//Move to HTML5.
 //http://www.html5-tutorials.org/form-validation/polyfills-for-form-validation/
 
 $('#external').on('click', '#btSubmit', function() {
@@ -51,12 +106,14 @@ $('#external').on('click', '#btSubmit', function() {
           },
           studentFullName: {
               required: true
-          }
+          },
+          studentAge: 'required',
       },
       messages: {
           parentFullName: 'Please enter your full name',
           parentEmail: 'Please enter a valid email address',
-          studentFullName: 'Please the student\'s full name'
+          studentFullName: 'Please enter the student\'s full name',
+          studentAge: 'Please enter the student\'s age'
 
       },
       submitHandler: function(form) {
@@ -67,6 +124,8 @@ $('#external').on('click', '#btSubmit', function() {
   });
 
 });
+
+// Generic Controller
 
 $('#external').on('click', '#btBack', function(e) {
   'use strict';
@@ -87,12 +146,22 @@ $('#external').on('click', '#btBack', function(e) {
 
 //CSS Carrousel
 
-var backgroundsCSSClasses = new Array("one", "two","three","four");
+var backgroundsCSSClasses = "";
 var backgroundIndex = 0;
 
-function updateBackground(){
-  console.log("Running");
+$(function() {
+  var cssString = "";
+  var $obj = $("<div></div>");
+  $obj.addClass("backgroundsCSSClasses");
+  $obj.appendTo("body");
+  $obj.each(function(){
+    cssString = window.getComputedStyle(this,':before').content;
+  });
+  $obj.remove();
+  backgroundsCSSClasses = cssString.split(",");
+});
 
+function updateBackground(){
   if(backgroundIndex >= backgroundsCSSClasses.length){
     backgroundIndex = 0;
   }
