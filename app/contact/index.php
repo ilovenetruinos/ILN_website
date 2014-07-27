@@ -15,6 +15,7 @@ $smarty->debugging = false;
 $smarty->caching = false;
 $smarty->cache_lifetime = 120;
 
+$smarty->assign("title", "Contact", true);
 $smarty->assign("level", "../", true);
 
 $smarty->display('contact.tpl');

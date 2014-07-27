@@ -12,9 +12,11 @@ $smarty = new Smarty;
 
 //$smarty->force_compile = true;
 $smarty->debugging = false;
+$smarty->debugging_ctrl = ($_SERVER['SERVER_NAME'] == 'localhost') ? 'URL' : 'NONE';
 $smarty->caching = false;
 $smarty->cache_lifetime = 120;
 
+$smarty->assign("title", "An annual STEAM course", true);
 $smarty->assign("level", "./", true);
 /*
 $smarty->assign("contacts", array(array("phone" => "1", "fax" => "2", "cell" => "3"),

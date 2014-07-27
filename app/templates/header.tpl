@@ -5,7 +5,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black" />
 
-    <title>I Love Neutrinos</title>
+    <title>I Love Neutrinos // {$title}</title>
     <meta name='keywords' content='STEM,STEAM, ILN, I-Love-Neutrinos, Neutrinos, Lego Mindstorms, Science' />
     <meta name='description' content='I Love Neutrinos is an annual STEAM program.' />
     <meta name='author' content='Juan Antonio Breña Moral' />

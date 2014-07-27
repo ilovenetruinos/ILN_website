@@ -15,6 +15,9 @@ $smarty->debugging = false;
 $smarty->caching = false;
 $smarty->cache_lifetime = 120;
 
+$smarty->assign("title", "Register", true);
 $smarty->assign("level", "../", true);
+
+$smarty->assign("ageValues", array("10", "11", "12", "13", "14", "15", "16", "17", "18"));
 
 $smarty->display('register.tpl');

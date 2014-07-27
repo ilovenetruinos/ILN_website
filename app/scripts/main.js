@@ -125,6 +125,37 @@ $('#external').on('click', '#btSubmit', function() {
 
 });
 
+$('#external').on('click', '#btSubmit', function() {
+  'use strict';
+
+  $('#contact-form').validate({
+      rules: {
+          fullName: 'required',
+          email: {
+              required: true,
+              email: true
+          },
+          subject: {
+              required: true
+          },
+          contentArea: 'required',
+      },
+      messages: {
+          fullName: 'Please, enter your full name',
+          email: 'Please, enter a valid email address',
+          subject: 'Please, enter subject',
+          contentArea: 'Please, describe your doubt.'
+
+      },
+      submitHandler: function(form) {
+
+          //TODO: http://stackoverflow.com/questions/18265637/jquery-validate-with-ajax-in-submithandler-submits-on-second-click
+          form.submit();
+      }
+  });
+
+});
+
 // Generic Controller
 
 $('#external').on('click', '#btBack', function(e) {
