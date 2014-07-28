@@ -5,5 +5,6 @@ bower_components
 .ftppass
 dist
 ideas
-app/demo/cache/
-app/demo/templates_c/
+app/cache/
+app/templates_c/
+app/vendor/

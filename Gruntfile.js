@@ -416,7 +416,14 @@ module.exports = function (grunt) {
         }
     }
     */
-
+    composer : {
+        options : {
+            usePhp: true,
+            flags: ['arg'],
+            cwd: './app/',
+            composerLocation: './app/composer.phar'
+        }
+    }
 
   });
 
