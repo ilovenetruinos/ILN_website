@@ -6,8 +6,10 @@
         <li><a href="#" id="btDocs" role="button"><span class="glyphicon glyphicon-file"></span>&nbsp;Docs</a></li>
         <li><a href="#" id="btContact" role="button"><span class="glyphicon glyphicon-earphone"></span>&nbsp;Contact</a></li>
     </ul>
+    {* this is a comment 
     <div id="clear"></div>
     <p class="register">
         <a href="#" id="btRegister" class="btn btn-lg btn-success" role="button"><span class="glyphicon glyphicon-star"></span>&nbsp;Pre-registration</a>
     </p>
+    *}
 {/block}

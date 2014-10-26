@@ -38,24 +38,6 @@ body {
   behavior: url("./backgroundsize.min.htc");
 }
 
-.two{
-  position: relative;
-  background: url("/images/abb.jpg");
-  background-size: cover;
-  /* IE8 Support http://louisremi.github.io/background-size-polyfill/ */
-  -ms-behavior: url("./backgroundsize.min.htc");
-  behavior: url("./backgroundsize.min.htc");
-}
-
-.three{
-  position: relative;
-  background: url("/images/nxt.jpg");
-  background-size: cover;
-  /* IE8 Support http://louisremi.github.io/background-size-polyfill/ */
-  -ms-behavior: url("./backgroundsize.min.htc");
-  behavior: url("./backgroundsize.min.htc");
-}
-
 .four{
   position: relative;
   background: url("/images/Georges_Braque.jpg");
@@ -74,6 +56,7 @@ body {
   behavior: url("./backgroundsize.min.htc");
 }
 
+
 .six{
   position: relative;
   background: url("/images/Iliad_Heroes2.jpg");
@@ -86,7 +69,7 @@ body {
 div.backgroundsCSSClasses:before{
   position: absolute;
   left: -9000px; 
-  content: 'one, two, three, four, five, six';
+  content: 'one, four, five, six';
 }
 
 /* End CSS Carrousel*/

@@ -14,7 +14,7 @@ $( document ).ajaxStart(function() {
   NProgress.start();
 });
 
-$( document ).ajaxStart(function() {
+$( document ).ajaxStop(function() {
   'use strict';
   NProgress.done();
 });
