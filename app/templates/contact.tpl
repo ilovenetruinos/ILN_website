@@ -1,8 +1,8 @@
 {extends file='mainPageTemplate.tpl'}
 {block name="workingArea"}
     <p>
-    Fill the following form to do the Pre-registration process in the course.
-    Once we received the application, we will study with detail and I will inform about the result.
+    Fill the following form to send your inquiry.
+    Besides, you could phone using the following number: <a href="callto:0034655970320">+34 655970320</a>
     </p>
     <form action="contactStep2.php" method="post" id="contact-form" novalidate="novalidate">
         <fieldset>

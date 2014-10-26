@@ -21,6 +21,8 @@ $( document ).ajaxStop(function() {
 
 //Index Controller
 
+var __title = "I Love Neutrinos";
+
 $('#external').on('click', '#btAbout', function(e) {
   'use strict';
   e.preventDefault();
@@ -34,7 +36,7 @@ $('#external').on('click', '#btAbout', function(e) {
       return response;
     }
   });
-  History.pushState({data:"About"}, "About", "/about/");
+  History.pushState({data:"About"}, __title, "/about/");
 
 }); 
 
@@ -51,7 +53,24 @@ $('#external').on('click', '#btDocs', function(e) {
       return response;
     }
   });
-  History.pushState({data:"Docs"}, "Docs", "/docs/");
+  History.pushState({data:"Docs"}, __title, "/docs/");
+
+});
+
+$('#external').on('click', '#btProjects', function(e) {
+  'use strict';
+  e.preventDefault();
+
+  $('#external').load('/projects/ #external' , function( response, status, xhr ) {
+    if ( status === 'error' ) {
+      var msg = 'Sorry but there was an error: ';
+      return msg + xhr.status + ' ' + xhr.statusText;
+    }else if(status === 'success'){
+
+      return response;
+    }
+  });
+  History.pushState({data:"Projects"}, __title, "/projects/");
 
 });
 
@@ -68,7 +87,7 @@ $('#external').on('click', '#btContact', function(e) {
       return response;
     }
   });
-  History.pushState({data:"Contact"}, "Contact", "/contact/");
+  History.pushState({data:"Contact"}, __title, "/contact/");
 
 });
 
@@ -85,7 +104,7 @@ $('#external').on('click', '#btRegister', function(e) {
       return response;
     }
   });
-  History.pushState({data:"Register"}, "Register", "/register/");
+  History.pushState({data:"Register"}, __title, "/register/");
 
 });  
 
@@ -171,7 +190,7 @@ $('#external').on('click', '#btBack', function(e) {
     }
   });
 
-  History.pushState({data:"Index"}, "Index", "/");
+  History.pushState({data:"Index"}, __title, "/");
 
 });
 

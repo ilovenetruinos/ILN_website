@@ -17,3 +17,10 @@ The project is a Web training to check the following technologies:
     HTML5 History API
     Web fonts
     Javascript
+
+The way to run the project:
+
+grunt build
+grunt php
+grunt deploy
+

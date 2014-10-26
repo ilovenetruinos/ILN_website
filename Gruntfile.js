@@ -492,7 +492,7 @@ module.exports = function (grunt) {
   grunt.registerTask('deploy', [
     //'newer:jshint',
     'phplint',
-    'build',
+    //'build',
     'ftp-deploy'
   ]);
 
