@@ -7,10 +7,14 @@
         <li><a href="#" id="btProjects" role="button"><span class="glyphicon glyphicon-send"></span>&nbsp;Projects</a></li>
         <li><a href="#" id="btContact" role="button"><span class="glyphicon glyphicon-earphone"></span>&nbsp;Contact</a></li>
     </ul>
-    {* this is a comment 
     <div id="clear"></div>
+    {* this is a comment 
+    
     <p class="register">
         <a href="#" id="btRegister" class="btn btn-lg btn-success" role="button"><span class="glyphicon glyphicon-star"></span>&nbsp;Pre-registration</a>
     </p>
     *}
+    <p>
+    Our slogan is: <strong>"Fun & flying cows"</strong>.
+    </p>
 {/block}

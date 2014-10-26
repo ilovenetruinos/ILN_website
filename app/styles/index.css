@@ -116,6 +116,7 @@ div.backgroundsCSSClasses:before{
   color: white;
   text-decoration: underline;
 }
+
 h1 {
   margin: 0;
   padding: 0;
@@ -155,4 +156,8 @@ p.alert{
 
 #content p.register{
   margin-bottom: 0px;
+}
+
+strong{
+  color: #cc1523;
 }
