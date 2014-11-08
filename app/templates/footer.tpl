@@ -10,6 +10,7 @@
     <script type="text/javascript" src="{$level}scripts/vendor.js"></script>
     <script type="text/javascript" src="{$level}scripts/history.js"></script>
     <script type="text/javascript" src="{$level}scripts/history.adapter.jquery.js"></script>
+    <script type="text/javascript" src="{$level}scripts/jquery.tubular.1.0.js"></script>    
     <script type="text/javascript" src="{$level}scripts/main.js"></script>
 
     {literal}

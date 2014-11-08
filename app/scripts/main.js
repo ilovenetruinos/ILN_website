@@ -211,6 +211,7 @@ $(function() {
   backgroundsCSSClasses = cssString.split(",");
 });
 
+/*
 function updateBackground(){
   if(backgroundIndex >= backgroundsCSSClasses.length){
     backgroundIndex = 0;
@@ -240,3 +241,16 @@ function updateBackground(){
 }
 
 var interval = setInterval(updateBackground, 60000*2);
+*/
+
+/* Tubular */
+$(function() {
+  //zgB-Diy8imo
+  //XP3cyRRAfX0
+  //iE5tUsq-4gQ
+  //hgMz0aXvzm0
+  //pRZN8swnaDo
+
+  var options = { videoId: 'pRZN8swnaDo', wrapperZIndex: 10, start: 20 };
+  $('#tubular').tubular(options);
+});

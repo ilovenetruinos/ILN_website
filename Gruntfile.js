@@ -309,6 +309,7 @@ module.exports = function (grunt) {
             //Rare JS
             'scripts/history.js',
             'scripts/history.adapter.jquery.js',
+            'scripts/jquery.tubular.1.0.js',
 
             'styles/fonts/{,*/}*.*'
           ]
