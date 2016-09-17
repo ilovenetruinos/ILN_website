@@ -52,61 +52,12 @@ body{
     color: #333;
     color: rgba(0,0,0,0.5);
 }
-.wrap{
-    margin-left: auto;
-    margin-right: auto;
-    width: 960px;
-    position: relative;
-}
 
 p{
     font-size: 1.5em;
     padding-left: 20px;
     padding-right: 20px;
     margin-bottom: 10px;
-}
-
-#menu li {
-    display:inline-block;
-    margin: 10px;
-    color: #000;
-    background:#fff;
-    background: rgba(255,255,255, 0.5);
-    -webkit-border-radius: 10px;
-            border-radius: 10px;
-}
-#menu li.active{
-    background:#666;
-    background: rgba(0,0,0, 0.5);
-    color: #fff;
-}
-#menu li a{
-    text-decoration:none;
-    color: #000;
-}
-#menu li.active a:hover{
-    color: #000;
-}
-#menu li:hover{
-    background: rgba(255,255,255, 0.8);
-}
-#menu li a,
-#menu li.active a{
-    padding: 9px 18px;
-    display:block;
-}
-#menu li.active a{
-    color: #fff;
-}
-#menu{
-    position:fixed;
-    top:0;
-    left:0;
-    height: 40px;
-    z-index: 70;
-    width: 100%;
-    padding: 0;
-    margin:0;
 }
 
 /* ILN */
@@ -148,13 +99,29 @@ h2{
     padding: 3% 0 0 0;
 }
 
+#section1 h1{
+    color: rgba(0,0,0,0.5);
+}
+
 @media only screen 
   and (min-device-width: 320px) 
   and (max-device-width: 480px) {
     
+    #section0 {
+        padding: 8% 0 0 0;
+    }
+
+    h1{
+        font-size: 2.5em;
+    }
+
     #section1{
         background-image: none;
         background-color: #F5BF70;
+    }
+
+    #section1 h1, #section2 h1{
+        margin-bottom: 10px;
     }
 
 }
