@@ -142,10 +142,23 @@ h2{
     background-image: url(./images/DEKATRON.jpg);
     padding: 12% 0 0 0;
 }
+
 #section1{
     background-image: url(./images/PILOT_ACE.jpg);
     padding: 3% 0 0 0;
 }
+
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 480px) {
+    
+    #section1{
+        background-image: none;
+        background-color: #F5BF70;
+    }
+
+}
+
 
 #section2{
     background-image: url(./images/HDR_75.jpg);
