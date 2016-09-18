@@ -60,6 +60,17 @@ p{
     margin-bottom: 10px;
 }
 
+th {
+    font-weight: bold;
+}
+
+th, td {
+    font-size: 1.5em;
+    padding-bottom: 10px;
+    padding-right: 10px;
+    text-align: left;
+}
+
 /* ILN */
 
 h1{
@@ -103,6 +114,26 @@ h2{
     color: rgba(0,0,0,0.5);
 }
 
+#section2{
+    background-image: url(./images/HDR_75.jpg);
+    padding: 3% 0 0 0;
+}
+
+#section3{
+    background-image: url(./images/guide-to-computing-01.jpg);
+    padding: 3% 0 0 0;
+}
+
+#section4{
+    background-image: url(./images/ENDIM.jpg);
+    padding: 3% 0 0 0;
+}
+
+#section5{
+    background-image: url(./images/EAI_PACE.jpg);
+    padding: 3% 0 0 0;
+}
+
 @media only screen 
   and (min-device-width: 320px) 
   and (max-device-width: 480px) {
@@ -124,22 +155,29 @@ h2{
         margin-bottom: 10px;
     }
 
+    #section5{
+        background-image: none;
+        background-color: #7CA88F;
+    }
+
+    th, td {
+        font-size: 1.0em;
+    }
+
+    .hideMobile {
+        display: none
+    }
+
 }
 
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px)  {
 
-#section2{
-    background-image: url(./images/HDR_75.jpg);
-    padding: 3% 0 0 0;
-}
+    .hideMobile {
+        display: none
+    }
 
-#section3{
-    background-image: url(./images/guide-to-computing-01.jpg);
-    padding: 3% 0 0 0;
-}
-
-#section4{
-    background-image: url(./images/ENDIM.jpg);
-    padding: 3% 0 0 0;
 }
 
 #fp-nav ul li a span, .fp-slidesNav ul li a span {
@@ -155,10 +193,6 @@ h2{
     font-size: 1.2em;
 }
 
-span.complete {
-    color: red;
-}
-
-span.available {
-    color: green;
+.fp-controlArrow.fp-next, .fp-controlArrow.fp-prev{
+    top:90%;
 }
